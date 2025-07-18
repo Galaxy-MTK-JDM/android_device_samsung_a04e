@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=ceres
+DEVICE=a04e
 VENDOR=samsung
 
 # Load extract_utils and do some sanity checks
