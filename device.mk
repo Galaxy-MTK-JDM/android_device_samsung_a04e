@@ -75,6 +75,10 @@ PRODUCT_PACKAGES += \
     libshim_sensors \
     libshim_ui
 
+# Overlay lineage
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 # Cgroup
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
