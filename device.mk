@@ -85,7 +85,7 @@ PRODUCT_PACKAGES += \
     libshim_ui
 
 # Overlay lineage
-DEVICE_PACKAGE_OVERLAYS += \
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 # Cgroup
