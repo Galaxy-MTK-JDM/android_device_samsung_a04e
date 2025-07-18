@@ -68,6 +68,13 @@ PRODUCT_PACKAGES += \
     libexif.vendor \
     libutils-v32
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_audio \
+    libshim_beanpod \
+    libshim_sensors \
+    libshim_ui
+
 # Cgroup
 PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
