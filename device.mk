@@ -303,8 +303,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
-    hardware/samsung
+    hardware/mediatek/libmtkperf_client \
+    hardware/samsung_ext
 
 # Thermal
 PRODUCT_PACKAGES += \
