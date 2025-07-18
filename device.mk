@@ -14,7 +14,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/samsung/ceres/ceres-vendor.mk)
+$(call inherit-product, vendor/samsung/a04e/a04e-vendor.mk)
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -241,12 +241,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlayCeres \
-    FrameworksResOverlayCeres \
-    SystemUIOverlayCeres \
-    TelephonyOverlayCeres \
-    TetheringConfigOverlayCeres \
-    WifiOverlayCeres
+    CarrierConfigOverlayA04e \
+    FrameworksResOverlayA04e \
+    SystemUIOverlayA04e \
+    TelephonyOverlayA04e \
+    TetheringConfigOverlayA04e \
+    WifiOverlayA04e
 
 # Sensors
 PRODUCT_PACKAGES += \
