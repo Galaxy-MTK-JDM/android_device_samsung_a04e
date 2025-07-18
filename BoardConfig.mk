@@ -24,9 +24,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-# Board Info
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
-
 # Boot Image
 BOARD_KERNEL_CMDLINE := \
     bootopt=64S3,32N2,64N2 loop.max_part=7 \
@@ -164,9 +161,9 @@ BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 3
 TARGET_VIBRATOR_SUPPORTS_EFFECTS := true
 
 # Vintf
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
+    $(DEVICE_PATH)/framework_compatibility_matrix.xml
 
 # Wi-Fi
 BOARD_HOSTAPD_DRIVER := NL80211
