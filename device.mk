@@ -488,7 +488,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
-    hardware/samsung_ext
+    hardware/samsung_ext \
+    $(LOCAL_PATH)/power-libperfmgr \
+    $(LOCAL_PATH)
 
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
