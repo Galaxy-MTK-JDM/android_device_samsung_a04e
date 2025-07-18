@@ -22,17 +22,39 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
-    android.hardware.soundtrigger@2.3-impl:32
-
-PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3-impl:32 \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio@7.0-util.vendor \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio.service \
+    libaudioclient_aidl_conversion \
+    libbluetooth_audio_session \
+    spatializer-aidl-cpp.vendor
+    android.hardware.audio.service.mediatek \
+    android.hardware.audio.common-util.vendor \
+    android.hardware.audio.common@5.0 \
+    android.hardware.audio.common@6.0.vendor \
+    android.hardware.audio.common@6.0-util.vendor \
+    android.hardware.audio.effect@6.0-util.vendor \
+    android.hardware.audio.effect@6.0.vendor \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@6.0.vendor \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio@6.0-util.vendor \
+    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio@2.0 \
+    android.hardware.bluetooth.audio@2.1 \
     audio.bluetooth.default \
     audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.stub
+    audio_policy.stub \
+    libtinycompress \
+    libtinyxml \
+    libaudiofoundation \
+    libaudioroute.vendor
 
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
@@ -42,6 +64,7 @@ PRODUCT_PACKAGES += \
     libunwindstack.vendor
 
 PRODUCT_PACKAGES += \
+    BesLoudness \
     MtkInCallService
 
 PRODUCT_COPY_FILES += \
@@ -57,7 +80,53 @@ PRODUCT_COPY_FILES += \
 # sysbta
 PRODUCT_PACKAGES += \
     audio.sysbta.default \
-    android.hardware.bluetooth.audio-service-system
+    android.hardware.bluetooth.audio-service-system \
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth@1.1.vendor
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0 \
+    android.hardware.camera.common@1.0.vendor \
+    android.hardware.camera.device@1.0.vendor \
+    android.hardware.camera.device@3.2.vendor \
+    android.hardware.camera.device@3.3.vendor \
+    android.hardware.camera.device@3.4.vendor \
+    android.hardware.camera.device@3.5.vendor \
+    android.hardware.camera.provider@2.4.vendor \
+    android.hardware.camera.provider@2.5.vendor \
+    libutils-v30 \
+    libutils-v32
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.a04e-libperfmgr \
+    android.hardware.power@1.0.vendor \
+    android.hardware.power@1.1.vendor \
+    android.hardware.power@1.2.vendor \
+    android.hardware.power@1.3.vendor
+
+PRODUCT_PACKAGES += \
+    libmtkperf_client_vendor \
+    libmtkperf_client
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health-V1-ndk \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service \
+    android.hardware.health@1.0
+
+PRODUCT_PACKAGES += \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
+    vendor.mediatek.hardware.mtkpower@1.0.vendor \
+    vendor.mediatek.hardware.mtkpower@1.1.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0.vendor \
+    android.hardware.thermal@2.0.vendor \
+    android.hardware.thermal@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
@@ -73,13 +142,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     $(DEVICE_PATH)/dt2w/init.dt2w.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.dt2w.rc
 
-# Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor \
     libcamera_metadata.vendor \
     libexif.vendor \
-    libutils-v32
+    libutils-v32 \
+    android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.6.vendor \
+    android.frameworks.cameraservice.common@2.0.vendor \
+    android.frameworks.cameraservice.device@2.1.vendor \
+    android.frameworks.cameraservice.service@2.2.vendor
 
 # Shims
 PRODUCT_PACKAGES += \
@@ -87,6 +158,10 @@ PRODUCT_PACKAGES += \
     libshim_beanpod \
     libshim_sensors \
     libshim_ui
+
+# CAS
+PRODUCT_PACKAGES += \
+    android.hardware.cas@1.2-service-lazy
 
 # Overlay lineage
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
@@ -97,21 +172,21 @@ PRODUCT_COPY_FILES += \
     system/core/libprocessgroup/profiles/cgroups_30.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
     $(LOCAL_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
 
-# Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@4.0.vendor \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.memtrack-service.mediatek-mali
+    android.hardware.graphics.allocator@4.0.vendor 
 
 PRODUCT_PACKAGES += \
     libdrm.vendor \
-    libutilscallstack.vendor \
+    libutilscallstack.vendor 
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.4.vendor \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images_vendor \
+    libsuspend
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -119,6 +194,52 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
+
+# PowerOffAlarm
+PRODUCT_PACKAGES += \
+    PowerOffAlarm
+
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.2.vendor \
+    android.hardware.radio@1.3.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio@1.5.vendor \
+    libpcap.vendor \
+    android.hardware.radio-V1.4-java
+
+# IMS
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base 
+
+# Display
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.allocator@3.0.vendor \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.1.vendor \
+    android.hardware.graphics.composer@2.1.vendor \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-resources.vendor \
+    android.hardware.graphics.common-V2-ndk.vendor:32 \
+    android.hardware.graphics.common-V2-ndk_platform.vendor:32 \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
+    disable_configstore
+
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-service.mediatek-mali
+
+PRODUCT_PACKAGES += \
+    gralloc.default \
+    libgrallocusage.vendor
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -137,14 +258,12 @@ PRODUCT_PACKAGES += \
     libcurl.vendor \
     libexpat.vendor
 
-# Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder.vendor
@@ -155,18 +274,26 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster4.vendor \
     libkeymaster41.vendor \
-    libkeymaster4_1support.vendor \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
     android.hardware.security.secureclock-V1-ndk_platform.vendor \
     android.hardware.security.sharedsecret-V1-ndk_platform.vendor
 
-# Light
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.samsung
+    android.hardware.drm-service.clearkey \
+    android.hardware.drm@1.4.vendor \
+    libdrm.vendor\
+    libdrmclearkeyplugin \
+    libmockdrmcryptoplugin \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libz_stable.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.samsung \
+    android.hardware.light-service.a04e
 
 # Media
 PRODUCT_PACKAGES += \
-    libavservices_minijail_vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
     libion.vendor \
@@ -182,13 +309,63 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc) \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/seccomp,$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy)
 
-# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-mediatek \
-    android.hardware.power@1.3.vendor
+    android.hardware.power-service-mediatek 
+
+# Dumpstate
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.1.vendor:64
 
 PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
+
+PRODUCT_PACKAGES += \
+    android.hidl.allocator@1.0 \
+    android.hidl.allocator@1.0.vendor \
+    libhwbinder 
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service \
+    libkeymaster4_1support.vendor \
+    libpuresoftkeymasterdevice.vendor
+
+PRODUCT_PACKAGES += \
+    libkeystore-wifi-hidl \
+    libkeystore-engine-wifi-hidl
+
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0.vendor:64
+
+PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.2.vendor \
+    libavservices_minijail \
+    libavservices_minijail_vendor \
+    libcodec2_simple_component \
+    libstagefright_softomx_plugin.vendor
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+
+# NDK
+PRODUCT_PACKAGES += \
+    android.hardware.common-V2-ndk_platform.vendor \
+    android.hardware.light-V1-ndk_platform.vendor \
+    android.hardware.power-V2-ndk_platform.vendor
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.3.vendor
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung \
+    vibrator.default
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -203,7 +380,8 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:# Thermal
+$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -312,7 +490,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libmtkperf_client \
     hardware/samsung_ext
 
-# Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.mediatek
 
@@ -324,7 +501,6 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
 
-# Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
 
