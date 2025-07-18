@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/samsung/ceres
+DEVICE_PATH := device/samsung/a04e
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -55,11 +55,11 @@ BOARD_MKBOOTIMG_ARGS := \
     --header_version $(BOARD_BOOTIMG_HEADER_VERSION) \
     --dtb $(TARGET_PREBUILT_DTB)
 
-TARGET_KERNEL_CONFIG := ceres_user_defconfig
+TARGET_KERNEL_CONFIG := a04e_defconfig
 TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/kernel-headers
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := ceres
+TARGET_BOOTLOADER_BOARD_NAME := a04e
 TARGET_NO_BOOTLOADER := true
 
 # Build
@@ -72,8 +72,8 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 TARGET_SCREEN_DENSITY := 300
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_ceres
-TARGET_RECOVERY_DEVICE_MODULES := libinit_ceres
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_a04e
+TARGET_RECOVERY_DEVICE_MODULES := libinit_a04e
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -180,4 +180,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
-include vendor/samsung/ceres/BoardConfigVendor.mk
+include vendor/samsung/a04e/BoardConfigVendor.mk
