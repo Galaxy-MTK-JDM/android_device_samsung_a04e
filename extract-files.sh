@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=ceres
+DEVICE=a04e
 VENDOR=samsung
 
 # Load extract_utils and do some sanity checks
@@ -83,7 +83,7 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "$2"
             ;;
 	vendor/bin/mnld | \
-	vendor/lib*/libaalservice.so | \
+	vendor/lib*/libaal_key.so | \
 	vendor/lib64/libcam.utils.sensorprovider.so)
             "${PATCHELF}" --add-needed "libshim_sensors.so" "${2}"
             ;;
