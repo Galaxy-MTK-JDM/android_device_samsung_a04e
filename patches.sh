@@ -1,7 +1,7 @@
 [ -z "$1" ] && echo "please specify patch dir" && exit 2
 
 maindir=$(pwd)
-patchesDir=$1
+patchesDir=patches
 
 if [ -f "$maindir/TMP_PATCHES" ]; then
   echo "patches seems to already be applied, skipping"
