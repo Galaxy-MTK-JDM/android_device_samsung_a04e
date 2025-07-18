@@ -69,6 +69,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
     libbluetooth_audio_session
 
+# DT2W
+PRODUCT_PACKAGES += \
+    $(DEVICE_PATH)/dt2w/init.dt2w.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.dt2w.rc
+
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.6.vendor \
