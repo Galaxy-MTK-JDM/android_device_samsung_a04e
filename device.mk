@@ -235,18 +235,35 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    fstab.enableswap \
     fstab.mt6765 \
-    fstab.mt6765.ramdisk \
+    factory_init.connectivity.common.rc \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.aee.rc \
     init.ago.rc \
+    init.cgroup.rc \
+    init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
-    init.mt6762.rc \
     init.mt6765.rc \
     init.mt6765.usb.rc \
     init.project.rc \
-    init.target.rc \
     init.sensor_1_0.rc \
-    ueventd.mt6765.rc
+    init_connectivity.rc \
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    meta_init.vendor.rc \
+    multi_init.rc \
+    init.recovery.mt6765.rc \
+    init.recovery.samsung.rc 
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765 
 
 # Runtime Resource (RRO) Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
