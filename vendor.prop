@@ -1,0 +1,92 @@
+# Audio
+ro.config.vc_call_vol_steps=8
+ro.vendor.mtk_audio_alac_support=1
+ro.vendor.mtk_audio_ape_support=1
+ro.vendor.mtk_audio_tuning_tool_ver=V2.2
+
+# Bluetooth
+bluetooth.device.class_of_device=90,2,12
+bluetooth.hardware.power.operating_voltage_mv=3300
+bluetooth.profile.a2dp.source.enabled=true
+bluetooth.profile.asha.central.enabled=true
+bluetooth.profile.avrcp.target.enabled=true
+bluetooth.profile.bas.client.enabled=true
+bluetooth.profile.gatt.enabled=true
+bluetooth.profile.hfp.ag.enabled=true
+bluetooth.profile.hid.device.enabled=true
+bluetooth.profile.hid.host.enabled=true
+bluetooth.profile.map.server.enabled=true
+bluetooth.profile.opp.enabled=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.pbap.server.enabled=true
+bluetooth.profile.sap.server.enabled=true
+ro.vendor.mtk.bt_sap_enable=true
+
+# Camera
+persist.vendor.camera3.pipeline.bufnum.base.imgo=4
+persist.vendor.camera3.pipeline.bufnum.base.lcso=4
+persist.vendor.camera3.pipeline.bufnum.base.rrzo=4
+persist.vendor.camera3.pipeline.bufnum.base.rsso=5
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.fdyuv=5
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.imgo=7
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.lcso=7
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.rrzo=7
+persist.vendor.camera3.pipeline.bufnum.min.high_ram.rsso=7
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.fdyuv=5
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=6
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.lcso=6
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.rrzo=6
+persist.vendor.camera3.pipeline.bufnum.min.low_ram.rsso=6
+ro.mtk_cam_stereo_camera_support=1
+ro.vendor.camera.isp.support.colorspace=0
+ro.vendor.camera3.zsl.default=260
+ro.vendor.mtk_camera_app_version=3
+vendor.camera.mdp.cz.enable=1
+vendor.camera.mdp.dre.enable=0
+
+# Connectivity
+persist.vendor.connsys.chipid=-1
+persist.vendor.connsys.dynamic.dump=0
+persist.vendor.connsys.fm_chipid=mt6631
+persist.vendor.connsys.patch.version=-1
+ro.vendor.connsys.dedicated.log=1
+vendor.connsys.driver.ready=no
+
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
+# Graphics
+ro.hardware.egl=meow
+ro.opengles.version=196610
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.primary_display_orientation=ORIENTATION_0
+ro.vendor.mtk_aal_support=1
+ro.vendor.mtk_pq_color_mode=1
+ro.vendor.mtk_pq_support=2
+
+# GNSS
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_log_hide_gps=2
+
+# Keymint
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.hardware.kmsetkey=trustonic
+
+# Media
+ro.vendor.mtk_config_max_dram_size=0x800000000
+vendor.mtk.vdec.waitkeyframeforplay=9
+
+# Properties
+ro.vendor.mediatek.platform=MT6765
+
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_teegris_tee_support=1
+
+# WiFi
+ro.vendor.wifi.sap.interface=ap0
+ro.vendor.wlan.gen=gen4m
+wifi.concurrent.interface=ap0
