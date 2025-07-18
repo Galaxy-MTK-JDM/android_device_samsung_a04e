@@ -371,7 +371,7 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Properties
-include $(LOCAL_PATH)/configs/props/vendor_logtag.mk
+include $(LOCAL_PATH)/vendor_logtag.mk
 
 # Recovery
 PRODUCT_PACKAGES += \
