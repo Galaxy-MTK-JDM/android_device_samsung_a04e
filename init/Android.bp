@@ -15,7 +15,7 @@
 //
 
 cc_library_static {
-    name: "libinit_ceres",
+    name: "libinit_a04e",
     recovery_available: true,
     srcs: [
         "init.cpp"
