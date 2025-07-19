@@ -53,11 +53,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/a2dpsink_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dpsink_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/configs/audio/audio_effects_sec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects_sec.xml \
     $(LOCAL_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/audio_policy_configuration_sec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_sec.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/audio/tms_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/tms_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/configs/audio/aurisys_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/aurisys_config.xml \
     $(LOCAL_PATH)/configs/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
@@ -80,7 +82,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.cameraservice.service@2.2.vendor
 
 PRODUCT_PACKAGES += \
-    libgui_vendor
+    libgui_debug
 
 # CAS
 PRODUCT_PACKAGES += \
@@ -122,7 +124,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
     android.hardware.drm@1.4.vendor \
-    libdrm.vendor\
+    libdrm.vendor \
     libdrmclearkeyplugin \
     libmockdrmcryptoplugin \
     libprotobuf-cpp-full-3.9.1-vendorcompat \
@@ -139,11 +141,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service-samsung.a32 \
-    SamsungUdfpsHandler.a32
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -177,7 +174,7 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-service \
+    android.hardware.keymaster@4.0 \
     libkeymaster4_1support.vendor \
     libpuresoftkeymasterdevice.vendor
 
@@ -217,17 +214,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
     libtextclassifier_hash.vendor
 
-# NFC
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor \
-    com.android.nfc_extras \
-    NfcNci \
-    SecureElement \
-    Tag
-
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/nfc,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 # Network tools
 PRODUCT_PACKAGES += \
     libpcap
@@ -242,14 +228,14 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlayA32 \
-    FrameworksResOverlayA32 \
-    SettingsOverlayA32 \
-    SettingsProviderOverlayA32 \
-    SystemUIOverlayA32 \
-    TelephonyOverlayA32 \
-    TetheringConfigOverlayA32 \
-    WifiOverlayA32
+    CarrierConfigOverlayA04e \
+    FrameworksResOverlayA04e \
+    SettingsOverlayA04e \
+    SettingsProviderOverlayA04e \
+    SystemUIOverlayA04e \
+    TelephonyOverlayA04e \
+    TetheringConfigOverlayA04e \
+    WifiOverlayA04e
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -262,11 +248,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.faketouch.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.faketouch.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
@@ -312,9 +293,6 @@ PRODUCT_PACKAGES += \
     libmtkperf_client_vendor \
     libmtkperf_client
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
 # PowerOffAlarm
 PRODUCT_PACKAGES += \
     PowerOffAlarm
@@ -339,37 +317,37 @@ PRODUCT_BOOT_JARS += \
     mediatek-framework \
     mediatek-ims-base
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
-
-# RenderScript
-PRODUCT_PACKAGES += \
-    android.hardware.renderscript@1.0-impl
-
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.mt6768 \
-    fstab.mt6769t \
+    fstab.enableswap \
+    fstab.mt6765 \
+    factory_init.connectivity.common.rc \
+    factory_init.connectivity.rc \
+    factory_init.project.rc \
+    factory_init.rc \
+    init.aee.rc \
     init.ago.rc \
     init.cgroup.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
-    init.mt6768.rc \
-    init.mt6768.usb.rc \
-    init.mt6769t.rc \
+    init.mt6765.rc \
+    init.mt6765.usb.rc \
     init.project.rc \
+    init.sensor_1_0.rc \
     init_connectivity.rc \
-    init.recovery.mt6768.rc \
-    init.recovery.mt6769t.rc \
-    init.recovery.samsung.rc \
-    init.target.rc \
-    ueventd.mtk.rc
+    meta_init.connectivity.common.rc \
+    meta_init.connectivity.rc \
+    meta_init.modem.rc \
+    meta_init.project.rc \
+    meta_init.rc \
+    meta_init.vendor.rc \
+    multi_init.rc \
+    init.recovery.mt6765.rc \
+    init.recovery.samsung.rc 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6768:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6768 \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6769t:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6769t \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6769t:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.mt6769t
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765 
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
